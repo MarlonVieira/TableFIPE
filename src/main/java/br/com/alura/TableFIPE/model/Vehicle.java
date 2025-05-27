@@ -1,4 +1,12 @@
 package br.com.alura.TableFIPE.model;
 
-public class Vehicle {
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record Vehicle(@JsonAlias("Valor") String value,
+                      @JsonAlias("Marca") String brand,
+                      @JsonAlias("Modelo") String model,
+                      @JsonAlias("AnoModelo") int year,
+                      @JsonAlias("Combustivel") String fuel) {
 }

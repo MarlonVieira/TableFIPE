@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fffb59b-bfda-44b5-a457-3a0ef1f2bec8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Brand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/service/ConsumeAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/service/ConvertData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/service/IConvetData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/TableFipeApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/main/MainTableFIPE.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/service/ConsumeAPI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/service/ConvertData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/service/IConvetData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/main/MainTableFIPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/main/MainTableFIPE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/DataReceived.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/service/ConsumeAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/service/ConsumeAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/main/MainTableFIPE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/main/MainTableFIPE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/service/ConsumeAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/service/ConsumeAPI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

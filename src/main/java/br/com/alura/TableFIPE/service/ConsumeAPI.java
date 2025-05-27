@@ -7,10 +7,11 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.NoSuchElementException;
 
 public class ConsumeAPI {
 
-    public String getData(String address) throws IOException, InterruptedException {
+    public String getData(String address) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(address))
@@ -26,6 +27,9 @@ public class ConsumeAPI {
         }
 
         String json = response.body();
+        if(json.contains("error")) {
+            throw new NoSuchElementException("An error occurred in api, check your inputs!");
+        }
         return json;
     }
 }
