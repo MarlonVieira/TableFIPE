@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -52,7 +53,10 @@ public class MainTableFIPE {
         String address = URL_BASE + option;
         json = consumeAPI.getData(address);
 
-        System.out.println(json);
+        var brand = convertData.getList(json, DataReceived.class);
+        brand.stream()
+                .sorted(Comparator.comparing(DataReceived::code))
+                .forEach(System.out::println);
 
         System.out.printf("Enter the brand code: ");
         optionBrand += scan.next();
@@ -61,6 +65,11 @@ public class MainTableFIPE {
 
         address += optionBrand;
         json = consumeAPI.getData(address);
+
+//        var model = convertData.getList(json, DataReceived.class);
+//        brand.stream()
+//                .sorted(Comparator.comparing(DataReceived::code))
+//                .forEach(System.out::println);
 
         System.out.println(json);
 
