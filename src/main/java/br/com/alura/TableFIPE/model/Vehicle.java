@@ -9,4 +9,15 @@ public record Vehicle(@JsonAlias("Valor") String value,
                       @JsonAlias("Modelo") String model,
                       @JsonAlias("AnoModelo") int year,
                       @JsonAlias("Combustivel") String fuel) {
+
+    @Override
+    public String toString() {
+        return String.format("""
+                Value: %s
+                Brand: %s
+                Model: %s
+                Year: %d
+                Fuel: %s
+                """, value, brand, model, year, fuel);
+    }
 }

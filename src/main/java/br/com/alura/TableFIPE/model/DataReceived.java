@@ -7,6 +7,6 @@ public record DataReceived(@JsonAlias("codigo") String code,
 
     @Override
     public String toString() {
-        return "Code: " + code + "  \t Name: " +name;
+        return "Code: " + code + "  \tName: " +name;
     }
 }

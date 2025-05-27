@@ -15,6 +15,6 @@ public class TableFipeApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		MainTableFIPE mainTableFIPE = new MainTableFIPE();
-		mainTableFIPE.ShowMenu();
+		mainTableFIPE.showMenu();
 	}
 }

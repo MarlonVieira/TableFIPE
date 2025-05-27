@@ -1,103 +1,99 @@
 package br.com.alura.TableFIPE.main;
 
 import br.com.alura.TableFIPE.model.DataReceived;
+import br.com.alura.TableFIPE.model.Model;
 import br.com.alura.TableFIPE.model.Vehicle;
 import br.com.alura.TableFIPE.service.ConsumeAPI;
 import br.com.alura.TableFIPE.service.ConvertData;
-import com.google.gson.Gson;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
 public class MainTableFIPE {
-    private Scanner scan = new Scanner(System.in);
-    private final String URL_BASE = "https://parallelum.com.br/fipe/api/v1/";
-    private ConsumeAPI consumeAPI = new ConsumeAPI();
-    private final ConvertData convertData = new ConvertData();
 
-    public void ShowMenu() {
-        String option = "", optionBrand = "/", optionModel = "/", optionYear = "/";
-        Integer choice = 0;
-        String json;
+    private final Scanner scan = new Scanner(System.in);
+    private final String BASE_URL = "https://parallelum.com.br/fipe/api/v1/";
+    private final ConsumeAPI api = new ConsumeAPI();
+    private final ConvertData converter = new ConvertData();
 
-        var menu = """
-                    *** OPTIONS ***
-                    1 - Car
-                    2 - Motorcycle
-                    3 - Truck
-                    ***************
-                    """;
+    public void showMenu() {
+        String option = chooseVehicleType();
+        String brandCode = chooseBrand(option);
+        String modelCode = chooseModel(option, brandCode);
+        List<String> vehicleCodes = chooseVehicleOptions(option, brandCode, modelCode);
+        fetchAndDisplayVehicleDetails(option, brandCode, modelCode, vehicleCodes);
+    }
 
+    private String chooseVehicleType() {
+        String[] vehicleTypes = {"carros", "motos", "caminhoes"};
+        String menu = """
+                *** OPTIONS ***
+                1 - Car
+                2 - Motorcycle
+                3 - Truck
+                ***************
+                """;
         System.out.println(menu);
 
-        while (choice != 1 && (choice != 2) && choice != 3) {
-            System.out.printf("Enter an option to consult the values: ");
+        int choice;
+        do {
+            System.out.print("Enter an option to consult the values: ");
+            while (!scan.hasNextInt()) {
+                System.out.print("Invalid input. Enter 1, 2 or 3: ");
+                scan.next();
+            }
             choice = scan.nextInt();
-        }
+        } while (choice < 1 || choice > 3);
 
-        switch (choice) {
-            case 1:
-                option = "carros/marcas";
-                break;
-            case 2:
-                option = "motos/marcas";
-                break;
-            case 3:
-                option = "caminhoes/marcas";
-                break;
-        }
+        return vehicleTypes[choice - 1];
+    }
 
-        String address = URL_BASE + option;
-        json = consumeAPI.getData(address);
+    private String chooseBrand(String vehicleType) {
+        String url = BASE_URL + vehicleType + "/marcas";
+        String json = api.getData(url);
+        List<DataReceived> brands = converter.getList(json, DataReceived.class);
 
-        var brand = convertData.getList(json, DataReceived.class);
-        brand.stream()
+        brands.stream()
                 .sorted(Comparator.comparing(DataReceived::code))
                 .forEach(System.out::println);
 
-        System.out.printf("Enter the brand code: ");
-        optionBrand += scan.next();
+        System.out.print("Enter the brand code: ");
+        return scan.next().trim();
+    }
 
-        optionBrand += "/modelos";
+    private String chooseModel(String vehicleType, String brandCode) {
+        String url = String.format("%s%s/marcas/%s/modelos", BASE_URL, vehicleType, brandCode);
+        String json = api.getData(url);
+        Model model = converter.getData(json, Model.class);
 
-        address += optionBrand;
-        json = consumeAPI.getData(address);
+        model.vehicleModels().stream()
+                .sorted(Comparator.comparing(DataReceived::code))
+                .forEach(System.out::println);
 
-//        var model = convertData.getList(json, DataReceived.class);
-//        brand.stream()
-//                .sorted(Comparator.comparing(DataReceived::code))
-//                .forEach(System.out::println);
+        System.out.print("Enter the model code: ");
+        return scan.next().trim();
+    }
 
-        System.out.println(json);
+    private List<String> chooseVehicleOptions(String vehicleType, String brandCode, String modelCode) {
+        String url = String.format("%s%s/marcas/%s/modelos/%s/anos", BASE_URL, vehicleType, brandCode, modelCode);
+        String json = api.getData(url);
 
-        System.out.printf("Enter the model code: ");
-        optionModel += scan.next();
+        List<DataReceived> vehicle = converter.getList(json, DataReceived.class);
 
-        optionModel += "/anos/";
-
-        address += optionModel;
-        json = consumeAPI.getData(address);
-
-        System.out.println(json);
-
-        String addressYears = address;
-
-        List<DataReceived> data = List.of(convertData.getData(json, DataReceived[].class));
-        List<String> codes = data.stream()
+        return vehicle.stream()
                 .map(DataReceived::code)
                 .toList();
+    }
 
-        List<Vehicle> vehicles = codes.stream()
-                .map(code -> {
-                    String json2 = null;
-                    json2 = consumeAPI.getData(addressYears + code);
-                    return convertData.getData(json2, Vehicle.class);
+    private void fetchAndDisplayVehicleDetails(String vehicleType, String brandCode, String modelCode, List<String> vehicleCodes) {
+        vehicleCodes.stream()
+                .map(vehicle -> {
+                    String url = String.format("%s%s/marcas/%s/modelos/%s/anos/%s",
+                            BASE_URL, vehicleType, brandCode, modelCode, vehicle);
+                    String json = api.getData(url);
+                    return converter.getData(json, Vehicle.class);
                 })
-                .toList();
-
-        vehicles.forEach(System.out::println);
+                .forEach(System.out::println);
     }
 }
