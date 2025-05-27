@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fffb59b-bfda-44b5-a457-3a0ef1f2bec8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Brand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/model/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/service/ConsumeAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/service/ConvertData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/service/IConvetData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/TableFipeApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/main/MainTableFIPE.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/service/ConsumeAPI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/service/ConvertData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/br/com/alura/TableFIPE/service/IConvetData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/TableFipeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/TableFipeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/main/MainTableFIPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/TableFIPE/main/MainTableFIPE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,12 +30,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarlonVieira&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MarlonVieira/TableFIPE&quot;,
+    &quot;accountId&quot;: &quot;72237d7f-d5e0-42ea-bad8-fc51dccd7f6e&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -40,16 +65,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TableFipeApplication.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/marlon.vieira/Desktop/Alura/TableFIPE"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TableFipeApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marlon.vieira/Desktop/Alura/TableFIPE&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="br.com.alura.TableFIPE" />
